@@ -3,6 +3,8 @@ using Discord.Commands;
 using Discord.WebSocket;
 using DiscordBot;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
+using System.Net;
 using System.Reflection;
 
 public class Program
@@ -18,6 +20,8 @@ public class Program
 
     private ulong _logChannelID;
     private SocketTextChannel _logChannel;
+
+    public bool _apiCall = false; 
 
     public async Task MainAsync()
     {
@@ -122,8 +126,50 @@ public class Program
                 await message.Channel.SendMessageAsync("Hello " + message.Author.Username + "!");
                 Console.WriteLine("Message Received");
                 break;
+
+            case "start":
+
+                WebClient client = new WebClient();
+
+                _apiCall = true;
+
+                ConsecutiveAPICalls(client, message);
+
+                break;
+
+            case "stop":
+                _apiCall = false;
+
+                break;
         }
+    }
 
+    public async Task ConsecutiveAPICalls(WebClient client, SocketMessage message)
+    {
+        while (_apiCall == true)
+        {
 
+            string json = client.DownloadString("https://api.warframestat.us/pc/");
+
+            dynamic obj = JsonConvert.DeserializeObject<dynamic>(json);
+            List<dynamic> list = new List<dynamic>();
+            foreach (dynamic item in obj["fissures"])
+            {
+                list.Add(item);
+            }
+
+            foreach (dynamic item in list)
+            {
+
+                if (item["isHard"] == true && item["missionType"] == "Disruption" && item["tier"] != "Requiem")
+                {
+                    await message.Channel.SendMessageAsync("There is a Steel Path mission Tenno!" +
+                                                            "\n" + item["node"] +
+                                                            "\n" + item["missionType"] +
+                                                            "\n" + item["tier"] +
+                                                            "\n" + item["eta"]);
+                }
+            }
+        }
     }
 }
