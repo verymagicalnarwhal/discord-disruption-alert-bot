@@ -170,6 +170,8 @@ public class Program
                                                             "\n" + item["eta"]);
                 }
             }
+
+            await Task.Delay(5000);
         }
     }
 }
