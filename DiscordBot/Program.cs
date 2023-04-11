@@ -23,10 +23,12 @@ public class Program
 
     public bool _apiCall = false; 
 
+    public List<dynamic> _currentList = new List<dynamic>();
+
     public async Task MainAsync()
     {
 
-        string tokenURL = "D:\\Github\\discord-disruption-alert-bot\\SecretToken.txt";
+        string tokenURL = "C:\\Users\\Anna\\Documents\\GitHub\\discord-disruption-alert-bot\\SecretToken.txt";
 
         var config = new DiscordSocketConfig
         {
@@ -148,30 +150,52 @@ public class Program
     {
         while (_apiCall == true)
         {
-
             string json = client.DownloadString("https://api.warframestat.us/pc/");
 
             dynamic obj = JsonConvert.DeserializeObject<dynamic>(json);
-            List<dynamic> list = new List<dynamic>();
+
             foreach (dynamic item in obj["fissures"])
             {
-                list.Add(item);
-            }
-
-            foreach (dynamic item in list)
-            {
-
                 if (item["isHard"] == true && item["missionType"] == "Disruption" && item["tier"] != "Requiem")
                 {
-                    await message.Channel.SendMessageAsync("There is a Steel Path mission Tenno!" +
+                    if (_currentList.Count == 0 )
+                    {
+                        _currentList.Add(item);
+
+                        await message.Channel.SendMessageAsync("There is a Steel Path mission Tenno!" +
                                                             "\n" + item["node"] +
                                                             "\n" + item["missionType"] +
                                                             "\n" + item["tier"] +
                                                             "\n" + item["eta"]);
+                    }
+                    
+                    else
+                    {
+                        foreach (dynamic fissure in _currentList)
+                        {
+                            if (item["id"] != fissure["id"])
+                            {
+                                _currentList.Add(item);
+
+                                await message.Channel.SendMessageAsync("There is a Steel Path mission Tenno!" +
+                                                            "\n" + item["node"] +
+                                                            "\n" + item["missionType"] +
+                                                            "\n" + item["tier"] +
+                                                            "\n" + item["eta"]);
+                            }
+
+                            if (fissure["expired"] == true)
+                            {
+                                _currentList.Remove(fissure);
+                            }
+                        }
+                    }
+
                 }
             }
+            Console.WriteLine("Checked. Sadly no new disruption missions :(");
 
-            await Task.Delay(5000);
+            await Task.Delay(10000);
         }
     }
 }

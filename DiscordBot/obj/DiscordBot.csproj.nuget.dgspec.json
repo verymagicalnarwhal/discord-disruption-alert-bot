@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Github\\discord-disruption-alert-bot\\DiscordBot\\DiscordBot.csproj": {}
+    "C:\\Users\\Anna\\Documents\\GitHub\\discord-disruption-alert-bot\\DiscordBot\\DiscordBot.csproj": {}
   },
   "projects": {
-    "D:\\Github\\discord-disruption-alert-bot\\DiscordBot\\DiscordBot.csproj": {
+    "C:\\Users\\Anna\\Documents\\GitHub\\discord-disruption-alert-bot\\DiscordBot\\DiscordBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Github\\discord-disruption-alert-bot\\DiscordBot\\DiscordBot.csproj",
+        "projectUniqueName": "C:\\Users\\Anna\\Documents\\GitHub\\discord-disruption-alert-bot\\DiscordBot\\DiscordBot.csproj",
         "projectName": "DiscordBot",
-        "projectPath": "D:\\Github\\discord-disruption-alert-bot\\DiscordBot\\DiscordBot.csproj",
-        "packagesPath": "C:\\Users\\mgj32\\.nuget\\packages\\",
-        "outputPath": "D:\\Github\\discord-disruption-alert-bot\\DiscordBot\\obj\\",
+        "projectPath": "C:\\Users\\Anna\\Documents\\GitHub\\discord-disruption-alert-bot\\DiscordBot\\DiscordBot.csproj",
+        "packagesPath": "C:\\Users\\Anna\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anna\\Documents\\GitHub\\discord-disruption-alert-bot\\DiscordBot\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mgj32\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Anna\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

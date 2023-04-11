@@ -53,3 +53,4 @@ D:\Github\discord-disruption-alert-bot\DiscordBot\obj\Debug\net6.0\DiscordBot.pd
 D:\Github\discord-disruption-alert-bot\DiscordBot\obj\Debug\net6.0\DiscordBot.genruntimeconfig.cache
 D:\Github\discord-disruption-alert-bot\DiscordBot\obj\Debug\net6.0\ref\DiscordBot.dll
 D:\Github\discord-disruption-alert-bot\DiscordBot\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Anna\Documents\GitHub\discord-disruption-alert-bot\DiscordBot\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll

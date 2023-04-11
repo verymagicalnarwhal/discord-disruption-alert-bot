@@ -1,0 +1,17 @@
+C:\Users\Anna\Desktop\New folder\DiscordBot.exe
+C:\Users\Anna\Desktop\New folder\DiscordBot.dll
+C:\Users\Anna\Desktop\New folder\DiscordBot.deps.json
+C:\Users\Anna\Desktop\New folder\DiscordBot.runtimeconfig.json
+C:\Users\Anna\Desktop\New folder\DiscordBot.pdb
+C:\Users\Anna\Desktop\New folder\Discord.Net.Commands.dll
+C:\Users\Anna\Desktop\New folder\Discord.Net.Core.dll
+C:\Users\Anna\Desktop\New folder\Discord.Net.Interactions.dll
+C:\Users\Anna\Desktop\New folder\Discord.Net.Rest.dll
+C:\Users\Anna\Desktop\New folder\Discord.Net.Webhook.dll
+C:\Users\Anna\Desktop\New folder\Discord.Net.WebSocket.dll
+C:\Users\Anna\Desktop\New folder\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Anna\Desktop\New folder\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Anna\Desktop\New folder\Newtonsoft.Json.dll
+C:\Users\Anna\Desktop\New folder\System.Interactive.Async.dll
+C:\Users\Anna\Desktop\New folder\System.Linq.Async.dll
+C:\Users\Anna\Desktop\New folder\System.Reactive.dll
